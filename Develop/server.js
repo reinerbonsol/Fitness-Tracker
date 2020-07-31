@@ -19,7 +19,7 @@ app.use(express.static("public"));
 
 mongoose.connect(MONGODB_URI, {useMongoClient: true});
 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 
 require('./routes/api-routes')(app);
