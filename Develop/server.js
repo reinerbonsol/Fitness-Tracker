@@ -7,7 +7,7 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://reinerbonsol:love2god@ds027308.mlab.com:27308/heroku_8h9xc5qp";
 
 
 app.use(morgan("dev"));
@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, {useMongoClient: true});
 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
